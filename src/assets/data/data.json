@@ -1,0 +1,50 @@
+{
+    "questions": [
+        {
+            "question_id": 1,
+            "question": "IDs vs classes in CSS?",
+            "answer": {
+                "statement": "IDs and classes are both selectors in CSS",
+                "explanation": "ID is used to identify a single element while a class can be used to identify multiple elements.",
+                "example": "The ID selector is preceded by a hash sign (#) while the class selector is preceded by a full stop (.)", 
+                "illustration": "A good way to remember this is a class is a type of item and the id is the unique name of an item on the page."
+            },
+            "links": [
+                "https://www.htmldog.com/guides/css/intermediate/classid/",
+                "https://stackoverflow.com/questions/12889362/what-is-the-difference-between-id-and-class-in-css-and-when-should-i-use-them"
+            ],
+            "category": "css"
+        }, 
+        {
+            "question_id": 2,
+            "question": "What is DOCTYPE?",
+            "answer": {
+                "statement": "DOCTYPE is an abbreviation for DOCument TYPE and is always associated with a DTD (Document Type Definition)",
+                "explanation": "DOCTYPE declaration is required for webpages and send the user agent information on what document type to expect ie what version of html specifications your document respects.",
+                "example": "Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this DOCTYPE for reading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.", 
+                "illustration": "The DOCTYPE declaration for the HTML5 standards is <!DOCTYPE html>."
+            },
+            "links": [
+                "https://www.w3schools.com/tags/tag_doctype.asp",
+                "https://yangshun.github.io/front-end-interview-handbook/en/html-questions#what-does-a-doctype-do"
+            ],
+            "category": "html"
+        }, 
+        {
+            "question_id": 3,
+            "question": "What is Event Delegation?",
+            "answer": {
+                "statement": "Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.",
+                "explanation": "Rather than having an event listener on each child element, a single common parent element listens and responds to event triggered on any of its child nodes.",
+                "example": "You can target a button child by adding an event listener on the parent div containing the button as a child element.", 
+                "illustration": "This is very useful when dynamically adding new elements like buttons  or li etc. to a page via DOM manipulation/after the page has been loaded."
+            },
+            "links": [
+                "https://gomakethings.com/whats-the-difference-between-javascript-event-delegation-bubbling-and-capturing/#:~:text=tl%3Bdr%3A%20event%20delegation%20is,events%20that%20don't%20bubble.",
+                "https://programmingwithmosh.com/javascript/javascript-event-bubbling-and-event-delegation/"
+            ],
+            "category": "javascript"
+        } 
+
+    ]
+}
