@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import reactDom from "react-dom";
+import Data from "./assets/data/data.json";
 
 function Header() {
   return (
@@ -13,7 +14,7 @@ function Header() {
 function Main() {
   return (
     <main>
-      <h2>Main</h2>
+      <p>Main</p>
     </main>
   );
 }
@@ -28,27 +29,20 @@ function Footer() {
 
 //https://api.github.com/users/trishachi
 
-function App({ login }) {
-  const [data, setData] = useState(null);
+function App() {
+  const getData = () => {
+    for (var i = 0; i < Data.questions.length; i++) {
+      console.log(Data.questions.question);
+    }
+  };
 
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${login}`)
-      .then((response) => response.json())
-      .then(setData);
-  }, []);
-
-  if (data) {
-    return <div>{JSON.stringify(data)}</div>;
-  }
-  return <div>No User Found</div>;
-
-  // return (
-  //   <div className="App">
-  //     <Header />
-  //     <Main />
-  //     <Footer />
-  //   </div>
-  // );
+  return (
+    <div className="App">
+      <Header />
+      <Main getData={this.getData} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
