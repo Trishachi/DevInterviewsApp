@@ -1,4 +1,5 @@
 {
+    "categories": ["html", "css", "javascript", "general", "software"],
     "questions": [
         {
             "question_id": 1,
