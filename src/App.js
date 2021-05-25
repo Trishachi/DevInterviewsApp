@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./pages/Home";
 import "./App.css";
 
 import Data from "./assets/data/data.json";
@@ -11,21 +12,15 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Developer Interview Questions App</h1>
         <h2>
-          Short description of how the app works and waht the appis all about ie
-          aims to achieve
+          Short description of how the app works and what the app is all about
+          ie aims to achieve
         </h2>
         <button className="call-to-action">
           Select a Category below to begin
         </button>
       </header>
       <main>
-        <div>
-          {Data.categories.map((category) => {
-            // if (question.category.includes("javascript")) {
-            //   return <h4 key={question.question_id}>{question.question}</h4>;
-            return <button className="select-category">{category}</button>;
-          })}
-        </div>
+        <Home />
       </main>
       <footer>
         <p className="copyright font-italic">
