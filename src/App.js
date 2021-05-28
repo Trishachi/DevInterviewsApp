@@ -1,11 +1,14 @@
-import React from "react";
-import Home from "./pages/Home";
+import React, { useState } from "react";
+import Home, { Html } from "./pages/Home";
 import "./App.css";
 
-import Data from "./assets/data/data.json";
+export const onButtonClick = (evt) => {
+  console.log(evt.target.innerHTML);
+  // setCurrentView(evt.target.innerHTML);
+};
 
-function App() {
-  function getData() {}
+function App(props) {
+  const [currentView, setCurrentView] = useState("Home");
 
   return (
     <div className="App">
@@ -20,7 +23,8 @@ function App() {
         </button>
       </header>
       <main>
-        <Home />
+        {currentView === "Home" && <Home />}
+        {currentView === "Html" && <Html buttonClicked={props.onButtonClick} />}
       </main>
       <footer>
         <p className="copyright font-italic">
