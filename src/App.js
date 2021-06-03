@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import Home, { Html } from "./pages/Home";
+import { Html, Css, Js } from "./pages/Pages";
+import Data from "./assets/data/data.json";
 import "./App.css";
 
-export const onButtonClick = (evt) => {
-  console.log(evt.target.innerHTML);
-  // setCurrentView(evt.target.innerHTML);
-};
-
 function App(props) {
-  const [currentView, setCurrentView] = useState("Home");
+  const [currentPage, setCurrentPage] = useState("Home");
+
+  function buttonClicked(evt) {
+    console.log(evt.target.innerHTML + " Button Clicked");
+    setCurrentPage(evt.target.innerHTML);
+  }
 
   return (
     <div className="App">
@@ -23,8 +24,17 @@ function App(props) {
         </button>
       </header>
       <main>
-        {currentView === "Home" && <Home />}
-        {currentView === "Html" && <Html buttonClicked={props.onButtonClick} />}
+        {currentPage === "Home" &&
+          Data.categories.map((category) => {
+            return (
+              <button className="select-category" onClick={buttonClicked}>
+                {category}
+              </button>
+            );
+          })}
+        {currentPage === "html" && <Html />}
+        {currentPage === "css" && <Css />}
+        {currentPage === "javascript" && <Js />}
       </main>
       <footer>
         <p className="copyright font-italic">
